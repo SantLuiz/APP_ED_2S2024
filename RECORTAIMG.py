@@ -2,7 +2,7 @@ from PIL import Image
 import sqlite3
 import io
 
-# Função para dividir a imagem em uma grade de 10x10
+# Função para dividir uma imagem escolhida qualquer em uma grade de 10x10
 def dividir_imagem(imagem_caminho, grid_size=10):
     imagem = Image.open(imagem_caminho)
     largura, altura = imagem.size

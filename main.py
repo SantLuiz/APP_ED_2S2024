@@ -20,7 +20,7 @@ def buscar_todas_imagens():
     return [list(result) for result in results]
 
 def main(page: ft.Page):
-    page.title = "Comparação Algoritmos Ordenação"
+    page.title = "APS Estrutura de Dados - 2 Sem 2024"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER  
 
     botao_limpar = ft.IconButton(
@@ -61,12 +61,11 @@ def main(page: ft.Page):
 Tempo para ordenação: {tempo}
 """,
                 text_align="center",
-                weight="bold"
+                weight="bold", selectable=True
             )
     )
     def limpar_texto_drawer():
-    # Remove todos os controles de texto adicionados dinamicamente ao drawer
-        drawer.controls = drawer.controls[:6]  # Mantém apenas os elementos iniciais
+        drawer.controls = drawer.controls[:6] 
         page.update()
 
     page.update()
@@ -118,7 +117,7 @@ Tempo para ordenação: {tempo}
             case "INSERTION SORT":
                 dadoimagem = insertion.Ordenar(dadoimagem)
 
-        end_time = time.time()  # Captura o tempo de término
+        end_time = time.time()  
         execution_time = end_time - start_time
 
         adicionar_algoritmo_executado(execution_time)
@@ -161,7 +160,6 @@ Tempo para ordenação: {tempo}
         ],
         width=180,
         value="BUBBLE SORT",
-          # Chama a função ao selecionar um algoritmo
     )
 
     menu = ft.Column([

@@ -2,19 +2,14 @@ import requests
 import sqlite3
 import time
 
+
 # Configurações da API e da região amazônica
-NASA_API_URL = "https://api.nasa.gov/planetary/earth/imagery"
-API_KEY = "t89C7dsxmbTY6LP475FGoCbfeD70rnLweZe4ftX3"  # Substitua pela sua chave da API
+NASA_API_URL = "https://api.nasa.gov/planetary/earth/imagery" #URL DA API
+API_KEY = "##############################" #Chave da API (OCULTADA POIS SERA UPADA NUM REPOSITORIO PUBLICO/ PODE SER REQUISITADA EM https://api.nasa.gov/ NA ABA DE "Generate API Key")                                                           
 REGIAO_AMAZONIA = {
     "lat_min": -10.0, "lat_max": 5.0,  # Limites de latitude da Amazônia
     "lon_min": -75.0, "lon_max": -45.0  # Limites de longitude da Amazônia
 }
-
-#COORDENADAS BAIXADA SANTISTA
-# REGIAO_AMAZONIA = {
-#     "lat_min": -24.03, "lat_max": -23.83,  
-#     "lon_min": -46.46, "lon_max": -46.25  
-# }
 
 # Configuração do banco de dados
 conn = sqlite3.connect('Amazonia.db')

@@ -149,3 +149,48 @@ class  MergeSort:
                 ii += 1
                 iii += 1
         return array
+    
+
+class  MergeSort:
+
+    @staticmethod # Método estático para validar e dividir um array
+    def MetadeArray(array):
+
+        if (len(array) % 2) == 0:
+            return (len(array) / 2)
+        else:
+            return ((len(array) - 1) / 2)
+
+    def Ordenar(self, array):
+        if len(array) > 1:
+            meioArray = int(self.MetadeArray(array))
+
+            subArrEsq = array[:meioArray]      
+            subArrDir = array[meioArray:]      
+
+            self.Ordenar(subArrEsq)    # Recursão da função para subdividir os vetores até
+            self.Ordenar(subArrDir)    # obter vetores com um valor unitário
+            
+            i = ii = iii = 0    # Inicializando os índices para percorrer os subvetores
+
+            while i < len(subArrEsq) and ii < len(subArrDir):   
+                if subArrEsq[i] < subArrDir[ii]:
+                    array[iii] = subArrEsq[i]
+                    i += 1
+                else:
+                    array[iii] = subArrDir[ii]
+                    ii += 1
+                iii += 1
+
+            while i < len(subArrEsq):
+                array[iii] = subArrEsq[i]
+                i += 1
+                iii += 1
+
+            while ii < len(subArrDir):
+                array[iii] = subArrDir[ii]
+                ii += 1
+                iii += 1
+        return array
+    
+
